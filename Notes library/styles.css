@@ -1,0 +1,149 @@
+:root {
+  --white: #ffffff;
+  --black: #000000;
+  --light-gray: #dfe9f3;
+  --red: #da3737;
+  --green: #449c44;
+  --yellow: #f8c90f;
+  --blue: #0073e6;
+  --gray: #808080;
+  --dark-gray: #535353;
+  --dark-blue: #0a4468;
+  --light-blue: #cfe8ff;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  overflow-x: hidden;
+  font-family: Roboto, sans-serif;
+  background: linear-gradient(var(--light-gray), var(--light-blue));
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+}
+
+
+
+h1 {
+  color: var(--white);
+  text-align: center;
+  font-size: 2.2rem;
+  background: var(--blue);
+  padding: 0.9rem;
+  border-radius: 0.62rem;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+#notes-container {
+  margin-top: 1.25rem;
+  width: 100%;
+  text-align: center;
+  font-size: 1.2rem;
+  color: var(--dark-blue);
+}
+
+.note {
+  background: var(--white);
+  padding: 0.94rem;
+  margin-top: 0.94rem;
+  border-radius: 10px;
+  box-shadow: 0 0.25rem 0.625rem rgba(0, 0, 0, 0.1);
+  transition: 0.4s;
+  border-left: 5px solid var(--green);
+  animation: fadeIn 0.6s ease;
+}
+
+.note:hover {
+  transform: translateY(-3px);
+}
+
+.note-content {
+  font-size: 1rem;
+  color: var(--dark-gray);
+  margin-top: 10px;
+  text-align: left;
+}
+
+.note-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.note-title {
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+
+.note-actions {
+  display: flex;
+  gap: 10px;
+}
+
+.control-btn,
+.action-btn {
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  margin: 0.5rem;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  color: var(--white);
+  border: none;
+  font-weight: bold;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  transition: 0.4s;
+}
+
+.action-btn:hover,
+.control-btn:hover {
+  transform: scale(1.05);
+}
+
+.control-btn {
+  margin: 1rem 1rem 0rem 0rem;
+}
+
+.add {
+  background-color: var(--green);
+  padding: 0.31rem 0.625rem;
+}
+
+.clear {
+  background-color: var(--gray);
+  padding: 0.31rem 0.625rem;
+}
+
+.stats {
+  background-color: var(--blue);
+  padding: 0.31rem 0.625rem;
+}
+
+.edit-btn {
+  background-color: var(--yellow);
+  padding: 0.31rem;
+}
+
+.delete-btn {
+  background-color: var(--red);
+  padding: 0.31rem;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(2.25rem);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
