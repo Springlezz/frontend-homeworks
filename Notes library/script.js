@@ -7,18 +7,34 @@ const statsBtn = document.querySelector("#stats-btn");
 const notesContainer = document.querySelector("#notes-container");
 const statsPanel = document.querySelector("#stats-panel");
 
+const filter = document.querySelector("#filter");
+const filterSelect = document.querySelector("#noteFilter");
+const items = document.querySelectorAll(".item");
+
+const edited = new Map();
+
+filterSelect.addEventListener("change", function () {
+  filterNotes(+this.value);
+});
+
 function checkEmpty() {
   const allNotes = document.querySelectorAll(".note");
 
   if (allNotes.length === 0) {
     notesContainer.innerHTML = "Заметок нет. Добавьте первую!";
-
     noteCount = 0;
-
     statsPanel.innerHTML = "";
+  } else {
+    filter.style.display = "flex";
+    filterNotes(+filterSelect.value);
   }
 }
 
+function filterNotes(filter) {
+  for (const [note, state] of edited) {
+    note.style.display = filter === 0 || state === filter ? "block" : "none";
+  }
+}
 function createNoteHTML(number) {
   return `
     <div class="note">
@@ -33,36 +49,32 @@ function createNoteHTML(number) {
     </div>`;
 }
 
-function addNoteEventListeners() {
-  const editBtns = document.querySelectorAll(".edit-btn");
-  const deleteBtns = document.querySelectorAll(".delete-btn");
+function addNoteEventListener() {
+  const editBtn = document.querySelector(".note:last-child .edit-btn");
+  const deleteBtn = document.querySelector(".note:last-child .delete-btn");
 
-  for (let btn of editBtns) {
-    btn.onClick = null;
+  editBtn.addEventListener("click", function () {
+    const note = editBtn.closest(".note");
+    const noteTitle = note.querySelector(".note-title");
+    const noteContent = note.querySelector(".note-content");
+    const number = noteTitle.textContent.split("#")[1];
 
-    btn.addEventListener("click", function () {
-      const note = btn.closest(".note");
-      const noteTitle = note.querySelector(".note-title");
-      const noteContent = note.querySelector(".note-content");
-      const number = noteTitle.textContent.split("#")[1];
+    if (this.textContent === "Редактировать") {
+      noteContent.textContent = `Отредактированная заметка #${number}`;
+      this.textContent = "Сохранить";
+      edited.set(note, 2);
+    } else {
+      noteContent.textContent = `Сохраненная заметка #${number}`;
+      this.textContent = "Редактировать";
+      edited.set(note, 1);
+    }
+  });
 
-      if (this.textContent === "Редактировать") {
-        noteContent.textContent = `Отредактированная заметка #${number}`;
-        this.textContent = "Сохранить";
-      } else {
-        noteContent.textContent = `Сохраненная заметка #${number}`;
-        this.textContent = "Редактировать";
-      }
-    });
-  }
-  for (let btn of deleteBtns) {
-    btn.onClick = null;
-    btn.addEventListener("click", function () {
-      const note = btn.closest(".note");
-      note.outerHTML = "";
-      checkEmpty();
-    });
-  }
+  deleteBtn.addEventListener("click", function () {
+    const note = deleteBtn.closest(".note");
+    note.outerHTML = "";
+    checkEmpty();
+  });
 }
 
 addBtn.addEventListener("click", function () {
@@ -72,9 +84,14 @@ addBtn.addEventListener("click", function () {
     notesContainer.innerHTML = "";
   }
 
-  notesContainer.innerHTML += createNoteHTML(noteCount);
+  notesContainer.insertAdjacentHTML("beforeend", createNoteHTML(noteCount));
 
-  addNoteEventListeners();
+  const lastNote = document.querySelector(".note:last-child");
+  edited.set(lastNote, 0);
+
+  addNoteEventListener();
+
+  checkEmpty();
 });
 
 clearBtn.addEventListener("click", function () {
@@ -103,7 +120,7 @@ statsBtn.addEventListener("click", function () {
   }
 
   statsPanel.innerHTML = `
-    <div>
+    <div class="stats-panel">
         <p>Всего заметок: ${totalCount}</p>
         <p>Редактированных заметок: ${editedCount}</p>
         <p>Сохраненных заметок: ${savedCount}</p>

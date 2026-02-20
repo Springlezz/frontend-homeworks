@@ -30,8 +30,6 @@ body {
   min-height: 100vh;
 }
 
-
-
 h1 {
   color: var(--white);
   text-align: center;
@@ -89,6 +87,40 @@ h1 {
   gap: 10px;
 }
 
+#filter {
+  display: none;
+  justify-content: flex-start;
+  margin: 20px 0;
+}
+
+#noteFilter {
+  padding: 10px 16px;
+  font-size: 16px;
+  border-radius: 8px;
+  border: 2px solid var(--blue);
+  background-color: var(--white);
+  color: var(--dark-gray);
+  cursor: pointer;
+  outline: none;
+  transition: all 0.2s ease;
+}
+
+#noteFilter:hover {
+  border-color: #357abd;
+  background-color: #f5f9ff;
+}
+
+#noteFilter:focus {
+  border-color: #2d6cdf;
+  box-shadow: 0 0 5px rgba(45, 108, 223, 0.4);
+}
+
+#noteFilter option {
+  font-size: 16px;
+  padding: 10px;
+}
+
+
 .control-btn,
 .action-btn {
   display: inline-block;
@@ -135,6 +167,14 @@ h1 {
 .delete-btn {
   background-color: var(--red);
   padding: 0.31rem;
+}
+
+.stats-panel{
+  color: var(--dark-gray);
+  margin-top: 1.25rem;
+  width: 100%;
+  text-align: center;
+  font-size: 1.2rem;
 }
 
 @keyframes fadeIn {
