@@ -72,7 +72,8 @@ function addNoteEventListener() {
 
   deleteBtn.addEventListener("click", function () {
     const note = deleteBtn.closest(".note");
-    note.outerHTML = "";
+    edited.delete(note);
+    note.remove();
     checkEmpty();
   });
 }
@@ -101,20 +102,16 @@ clearBtn.addEventListener("click", function () {
 });
 
 statsBtn.addEventListener("click", function () {
-  const allNotes = document.querySelectorAll(".note");
-  const totalCount = allNotes.length;
+  const totalCount = edited.size;
 
   let editedCount = 0;
   let savedCount = 0;
 
-  for (let note of allNotes) {
-    const text = note.querySelector(".note-content").textContent;
-
-    if (text.includes("отредактированная")) {
+  for (const state of edited.values()) {
+    if (state === 2) {
       editedCount++;
     }
-
-    if (text.includes("Сохраненная")) {
+    if (state === 1) {
       savedCount++;
     }
   }
