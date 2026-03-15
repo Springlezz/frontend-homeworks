@@ -2,7 +2,7 @@
 
 В данном репозитории собраны учебные работы и небольшие практические задания по frontend-разработке.
 
-Основной стек: HTML5, CSS3, JavaScript, Vue.js.  Nike page/PC-screenshot.png
+Стек учебных работ: HTML5, CSS3, JavaScript.
 Работы направлены на отработку верстки, работы с DOM и реализации интерфейсов по макетам Figma.
 
 Более крупные и самостоятельные проекты представлены отдельно в профиле.
@@ -34,6 +34,11 @@
 ### 🔹 Notes library 
 Смена текста, удаление заметок, создание заметок и статистика с помощью DOM.
 
+<img src="Notes library/Notes library.png">
+
 ### 🔹 World of cats
 Верстка по дизайну с фигма: https://www.figma.com/design/bAExDrX6nDGZhfTa0cr7bt/CatsSite?node-id=0-1&p=f&t=JfgMXUPuypLwXwXz-0
+
+<img src="World of cats/cats-screenshot.png">
+<img src="World of cats/mobile">
 ---
