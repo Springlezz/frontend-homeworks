@@ -1,35 +1,35 @@
-:root{
-    --main-background: #FFFFFF;
-    --navigation-color: #FF7A00;
-    --search-background: #F2F0F3;
-    --search-text: #8A8A8A;
-    --description-text: #7A6F63;
-    --black-color: #000;
-    --little-fontsize: 0.87rem;
+:root {
+  --main-background: #ffffff;
+  --navigation-color: #ff7a00;
+  --search-background: #f2f0f3;
+  --search-text: #8a8a8a;
+  --description-text: #7a6f63;
+  --black-color: #000;
+  --little-fontsize: 0.87rem;
 }
 
 * {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
 body {
-    overflow-x: hidden;
-    font-family: 'Inter', sans-serif;
-    background-color: var(--main-background);
-    padding-left: 2.5rem;
-    padding-right: 2.5rem;
-    padding-top: 0.5rem;
-    /* padding-bottom: 0.6rem; */
+  overflow-x: hidden;
+  font-family: "Inter", sans-serif;
+  background-color: var(--main-background);
+  padding-left: 2.5rem;
+  padding-right: 2.5rem;
+  padding-top: 0.5rem;
+  /* padding-bottom: 0.6rem; */
 }
 
-nav{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: 1rem;
-    padding: 1rem 0rem;
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem 0rem;
 }
 
 .nav-right {
@@ -38,39 +38,39 @@ nav{
   gap: 1.25rem;
 }
 
-.logo{
-    width: 5rem;
-    height: 1.75rem;
-    cursor: pointer;
-    margin-left: 0;
+.logo {
+  width: 5rem;
+  height: 1.75rem;
+  cursor: pointer;
+  margin-left: 0;
 }
 
-.search-box{
-    display: flex;
-    align-items: center;
-    position: relative;
-    background-color: var(--search-background);
-    color: var(--search-text);
-    border-radius: 0.5rem;
-    padding: 0.4rem 0.75rem;
-    width: 18.75rem;
-    /* max-width: 40%;    */
-    width: 15rem;
+.search-box {
+  display: flex;
+  align-items: center;
+  position: relative;
+  background-color: var(--search-background);
+  color: var(--search-text);
+  border-radius: 0.5rem;
+  padding: 0.4rem 0.75rem;
+  width: 18.75rem;
+  /* max-width: 40%;    */
+  width: 15rem;
 }
 
-.search-input{
-    border: none;
-    outline: none;
-    background-color: var(--search-background);
-    color: var(--search-text);
-    width: 100%;
-    font-size: var(--little-fontsize)
+.search-input {
+  border: none;
+  outline: none;
+  background-color: var(--search-background);
+  color: var(--search-text);
+  width: 100%;
+  font-size: var(--little-fontsize);
 }
 
-.search-logo{
-    width: 1.5rem;
-    height: 1.5rem;
-    margin-right: 1rem;
+.search-logo {
+  width: 1.5rem;
+  height: 1.5rem;
+  margin-right: 1rem;
 }
 
 /* переделать под калк */
@@ -80,14 +80,14 @@ nav{
   gap: 0.75rem;
 }
 
-.nav-icon{
-    width: 1.5rem;
-    height: 1.5rem;
-    cursor: pointer;
-    opacity: 0.8rem;
+.nav-icon {
+  width: 1.5rem;
+  height: 1.5rem;
+  cursor: pointer;
+  opacity: 0.8rem;
 }
 
-.sort-section{
+.sort-section {
   padding-top: 1.25rem;
   padding-bottom: 1.25rem;
   display: flex;
@@ -95,64 +95,61 @@ nav{
   justify-content: space-between;
 }
 
-.sort-wrapper{
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-    cursor: pointer;
+.sort-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  cursor: pointer;
 }
 
-.sort-logo{
+.sort-logo {
   width: 1.5rem;
   height: 1.5rem;
 }
 
-.sort-label{
+.sort-label {
   font-size: 0.9rem;
 }
 
-.promo-line{
-    background-color: var(--navigation-color);
-    color: var(--main-background);
-    padding: clamp(0.25rem, 1vw, 1rem);
-    text-align: center;
-    font-size: clamp(0.5rem, 0.87rem, 1rem);
+.promo-line {
+  background-color: var(--navigation-color);
+  color: var(--main-background);
+  padding: clamp(0.25rem, 1vw, 1rem);
+  text-align: center;
+  font-size: clamp(0.5rem, 0.87rem, 1rem);
 }
 
-.h1-sort{
-  font-size: clamp(1rem,1.5rem,2rem);
+.h1-sort {
+  font-size: clamp(1rem, 1.5rem, 2rem);
 }
 
 .promo-line ul {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: clamp(1rem, 5vw, 10rem);
-    padding: 0;
-    margin: 0;
-    list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: clamp(1rem, 5vw, 10rem);
+  padding: 0;
+  margin: 0;
+  list-style: none;
 }
 
 .promo-line li {
-    font-size: clamp(0.75rem, 2vw, 1rem);
+  font-size: clamp(0.75rem, 2vw, 1rem);
 }
 
-
 .products-section {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 1rem;
-    justify-content: space-between;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: space-between;
 }
 
 .image-card {
-    flex: 1 1 calc((100% - 2rem * 2) / 3);
-    max-width: 19.375rem;
-    display: flex;
-    flex-direction: column;
+  flex: 1 1 calc((100% - 2rem * 2) / 3);
+  max-width: 19.375rem;
+  display: flex;
+  flex-direction: column;
 }
-
-
 
 /* .products-section {
   display: flex;
@@ -183,20 +180,19 @@ nav{
   gap: 0.5rem;
 }
 
-.text-imagecard{
+.text-imagecard {
   padding-top: 0.9rem;
   padding-bottom: 0.9rem;
 }
 
 .item {
-    font-weight: 700;
-    font-size: clamp(0.7rem, 2vw, 1rem);
+  font-weight: 700;
+  font-size: clamp(0.7rem, 2vw, 1rem);
 }
 
 .price {
-    font-size: clamp(0.7rem, 2vw, 1rem);
+  font-size: clamp(0.7rem, 2vw, 1rem);
 }
-
 
 .description,
 .color {
@@ -204,7 +200,7 @@ nav{
   color: var(--description-text);
 }
 
-.main-footer{
+.main-footer {
   width: 100vw;
   margin-left: calc(-1 * 2.5rem);
   margin-right: calc(-1 * 2.5rem);
@@ -215,31 +211,31 @@ nav{
   font-size: 0.8rem;
 }
 
-.main-footer a{
-    text-decoration: none;
-    color: var(--main-background);
+.main-footer a {
+  text-decoration: none;
+  color: var(--main-background);
 }
 
-.main-footer p{
+.main-footer p {
   font-weight: bold;
 }
 
 @media screen {
   body {
     overflow-x: hidden;
-    font-family: 'Inter', sans-serif;
+    font-family: "Inter", sans-serif;
     background-color: var(--main-background);
     padding-left: 1.8rem;
     padding-right: 1.8rem;
     padding-top: 0.5rem;
-    }
-    nav{
+  }
+  nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
     gap: 1rem;
     padding: 1rem 0rem;
-}
+  }
 
   .nav-right {
     display: flex;
@@ -247,39 +243,39 @@ nav{
     gap: 1.25rem;
   }
 
-  .logo{
-      width: 3.3rem;
-      height: 1.16rem;
-      cursor: pointer;
-      margin-left: 0;
+  .logo {
+    width: 3.3rem;
+    height: 1.16rem;
+    cursor: pointer;
+    margin-left: 0;
   }
 
-  .search-box{
-      display: flex;
-      align-items: center;
-      position: relative;
-      background-color: var(--search-background);
-      color: var(--search-text);
-      border-radius: 0.5rem;
-      padding: 0.4rem 0.75rem;
-      width: 18.75rem;
-      /* max-width: 40%;    */
-      width: 13rem;
+  .search-box {
+    display: flex;
+    align-items: center;
+    position: relative;
+    background-color: var(--search-background);
+    color: var(--search-text);
+    border-radius: 0.5rem;
+    padding: 0.4rem 0.75rem;
+    width: 18.75rem;
+    /* max-width: 40%;    */
+    width: 13rem;
   }
 
-  .search-input{
-      border: none;
-      outline: none;
-      background-color: var(--search-background);
-      color: var(--search-text);
-      width: 100%;
-      font-size: var(--little-fontsize)
+  .search-input {
+    border: none;
+    outline: none;
+    background-color: var(--search-background);
+    color: var(--search-text);
+    width: 100%;
+    font-size: var(--little-fontsize);
   }
 
-  .search-logo{
-      width: 1.0rem;
-      height: 1.0rem;
-      margin-right: 1rem;
+  .search-logo {
+    width: 1rem;
+    height: 1rem;
+    margin-right: 1rem;
   }
 
   .nav-buttons {
@@ -288,13 +284,13 @@ nav{
     gap: 0.75rem;
   }
 
-  .nav-icon{
-      width: 0.5rem;
-      height: 0.5rem;
-      cursor: pointer;
-      opacity: 0.8rem;
+  .nav-icon {
+    width: 0.5rem;
+    height: 0.5rem;
+    cursor: pointer;
+    opacity: 0.8rem;
   }
-  .main-footer{
+  .main-footer {
     width: 100vw;
     margin-left: calc(-1 * 1rem);
     margin-right: calc(-1 * 1rem);
@@ -306,7 +302,7 @@ nav{
   }
 }
 .burger {
-    display: none;
+  display: none;
 }
 .burger-item {
   width: 20px;
